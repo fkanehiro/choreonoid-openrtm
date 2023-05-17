@@ -60,6 +60,8 @@ else()
   set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS ${CHOREONOID_COMPILE_DEFINITIONS})
 endif()
 
+option(CHOREONOID_PLUGIN_LINK_USE_KEYWORD "Choreonoid plugin should use the PUBLIC link keyword" ON)
+
 find_package(OpenRTM REQUIRED CONFIG)
 
 # Check version
