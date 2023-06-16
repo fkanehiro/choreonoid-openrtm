@@ -9,6 +9,7 @@
 #include "RTSDiagramView.h"
 #include <cnoid/ViewManager>
 #include <cnoid/TreeWidget>
+#include <cnoid/ValueTree>
 #include <cnoid/ConnectionSet>
 #include <cnoid/AppConfig>
 #include <cnoid/Buttons>
