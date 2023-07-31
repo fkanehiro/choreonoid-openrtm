@@ -43,5 +43,5 @@ private:
 
 typedef ref_ptr<BodyIoRTCItem> BodyIoRTCItemPtr;
 
-}
+}  // namespace cnoid
 #endif
