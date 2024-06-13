@@ -108,14 +108,16 @@ else()
   set(LINK_KEYWORD)
 endif()
 
+find_package(Boost REQUIRED COMPONENTS program_options)
+
 if(IS_MASTER_PROJECT)
   target_compile_definitions(${plugin} PUBLIC ${CHOREONOID_QT_COMPILE_DEFINITIONS})
   target_link_libraries(${plugin} ${LINK_KEYWORD}
-    CnoidBodyIoRTC
+    CnoidBodyIoRTC ${Boost_PROGRAM_OPTIONS_LIBRARY}
     ${OPENRTM_LIBRARIES} ${CHOREONOID_CORBA_PLUGIN_LIBRARIES} ${CHOREONOID_BODY_PLUGIN_LIBRARIES})
 else()
   target_link_libraries(${plugin} ${LINK_KEYWORD}
-    CnoidBodyPlugin CnoidCorbaPlugin CnoidBodyIoRTC ${OPENRTM_LIBRARIES})
+    CnoidBodyPlugin CnoidCorbaPlugin CnoidBodyIoRTC ${Boost_PROGRAM_OPTIONS_LIBRARY} ${OPENRTM_LIBRARIES})
 endif()
 
 if(CHOREONOID_ENABLE_PYTHON)
